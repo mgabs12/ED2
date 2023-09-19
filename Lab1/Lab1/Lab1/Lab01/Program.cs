@@ -14,7 +14,7 @@ public class Program
         {
             AVLTree<Persona> arbolPersonas = new AVLTree<Persona>();
             List<Persona> personas = new List<Persona>();
-            string route = @"C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\Lab01-EDD2-main\Lab01-EDD2-main\Lab01-EDD2-main\input_lab1.csv";
+            string route = @"C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab1\Lab1\Lab1\input_lab1.csv";
             if (File.Exists(route))
             {
                 string[] FileData = File.ReadAllLines(route);
@@ -67,7 +67,7 @@ public class Program
                             line += JsonSerializer.Serialize<Persona>(item) + "\n";
                         }
                         line += "Existe un usuario llamado " + name;
-                        string output = @"C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\Lab01-EDD2-main\Lab01-EDD2-main\Lab01-EDD2-main\input_lab1.csv" + name + ".txt";
+                        string output = @"C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab1\Lab1\Lab1\input_lab1.csv" + name + ".txt";
                         //File.WriteAllText(output, line);
                         Console.WriteLine(line);
                         Console.WriteLine("");
