@@ -12,5 +12,10 @@ namespace lab2
         public string dpi { get; set; }
         public DateTime datebirth { get; set; }
         public string address { get; set; }
+        public string[] companies { get; set; }
+
+        public List<double> codes { get; set; }
+
+        public List<Dictionary<char, Letra>> dictionaries { get; set; }
     }
 }
