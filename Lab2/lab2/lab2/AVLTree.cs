@@ -44,7 +44,6 @@ namespace lab2
 
         private void SetHeight(Nodo<T> nodo)
         {
-
             if (nodo.Left == null || nodo.Right == null)
             {
                 if (nodo.Left == null && nodo.Right == null)
@@ -73,12 +72,12 @@ namespace lab2
             }
         }
 
-        public void Add(T item, Delegate condition1, Delegate condition2)
+        public void Add(T item, Delegate condition1)
         {
-            Root = AddInAVL(Root!, item, condition1, condition2);
+            Root = AddInAVL(Root!, item, condition1);
         }
 
-        private Nodo<T> AddInAVL(Nodo<T>? nodo, T item, Delegate condition1, Delegate condition2)
+        private Nodo<T> AddInAVL(Nodo<T>? nodo, T item, Delegate condition1)
         {
             if (nodo == null)
             {
@@ -88,23 +87,12 @@ namespace lab2
             {
                 if ((int)condition1.DynamicInvoke(item, nodo!.Value) < 0)
                 {
-                    nodo.Left = AddInAVL(nodo.Left!, item, condition1, condition2);
+                    nodo.Left = AddInAVL(nodo.Left!, item, condition1);
                 }
 
                 else if ((int)condition1.DynamicInvoke(item, nodo!.Value!) > 0)
                 {
-                    nodo.Right = AddInAVL(nodo.Right!, item, condition1, condition2);
-                }
-                else //Son iguales
-                {
-                    if ((int)condition2.DynamicInvoke(item, nodo!.Value) < 0)
-                    {
-                        nodo.Left = AddInAVL(nodo.Left!, item, condition1, condition2);
-                    }
-                    else if ((int)condition2.DynamicInvoke(item, nodo!.Value!) > 0)
-                    {
-                        nodo.Right = AddInAVL(nodo.Right!, item, condition1, condition2);
-                    }
+                    nodo.Right = AddInAVL(nodo.Right!, item, condition1);
                 }
             }
 
@@ -112,12 +100,12 @@ namespace lab2
             return nodo;
         }
 
-        public void Delete(T item, Delegate condition1, Delegate condition2)
+        public void Delete(T item, Delegate condition1)
         {
-            Root = DeleteInAVL(Root!, item, condition1, condition2);
+            Root = DeleteInAVL(Root!, item, condition1);
         }
 
-        private Nodo<T> DeleteInAVL(Nodo<T>? nodo, T item, Delegate condition1, Delegate condition2)
+        private Nodo<T> DeleteInAVL(Nodo<T>? nodo, T item, Delegate condition1)
         {
             if (nodo == null)
             {
@@ -126,52 +114,41 @@ namespace lab2
 
             else if ((int)condition1.DynamicInvoke(item, nodo.Value) < 0)
             {
-                nodo.Left = DeleteInAVL(nodo.Left!, item, condition1, condition2);
+                nodo.Left = DeleteInAVL(nodo.Left!, item, condition1);
             }
 
             else if ((int)condition1.DynamicInvoke(item, nodo.Value) > 0)
             {
-                nodo.Right = DeleteInAVL(nodo.Right!, item, condition1, condition2);
+                nodo.Right = DeleteInAVL(nodo.Right!, item, condition1);
             }
 
             else
             {
-                if ((int)condition2.DynamicInvoke(item, nodo.Value) < 0)
+                if (nodo.Left == null && nodo.Right == null)
                 {
-                    nodo.Left = DeleteInAVL(nodo.Left!, item, condition1, condition2);
+                    nodo = null;
+                    return nodo;
                 }
-                else if ((int)condition2.DynamicInvoke(item, nodo.Value) > 0)
+
+                else if (nodo.Left == null && nodo.Right != null)
                 {
-                    nodo.Right = DeleteInAVL(nodo.Right!, item, condition1, condition2);
+                    Nodo<T> temp = nodo.Right;
+                    nodo.Right = null;
+                    nodo = temp;
                 }
+
+                else if (nodo.Left != null && nodo.Right == null)
+                {
+                    Nodo<T> temp = nodo.Left;
+                    nodo.Left = null;
+                    nodo = temp;
+                }
+
                 else
                 {
-                    if (nodo.Left == null && nodo.Right == null)
-                    {
-                        nodo = null;
-                        return nodo;
-                    }
-
-                    else if (nodo.Left == null && nodo.Right != null)
-                    {
-                        Nodo<T> temp = nodo.Right;
-                        nodo.Right = null;
-                        nodo = temp;
-                    }
-
-                    else if (nodo.Left != null && nodo.Right == null)
-                    {
-                        Nodo<T> temp = nodo.Left;
-                        nodo.Left = null;
-                        nodo = temp;
-                    }
-
-                    else
-                    {
-                        Nodo<T>? temp = RightestfromLeft(nodo.Left!);
-                        nodo.Value = temp!.Value;
-                        nodo.Left = DeleteInAVL(nodo.Left!, temp.Value, condition1, condition2);
-                    }
+                    Nodo<T>? temp = RightestfromLeft(nodo.Left!);
+                    nodo.Value = temp!.Value;
+                    nodo.Left = DeleteInAVL(nodo.Left!, temp.Value, condition1);
                 }
             }
 
@@ -179,7 +156,7 @@ namespace lab2
             return nodo;
         }
 
-        public void Patch(T item, Delegate condition1, Delegate condition2)
+        public void Patch(T item, Delegate condition1)
         {
             if (item == null)
             {
@@ -203,18 +180,7 @@ namespace lab2
                 }
                 else
                 {
-                    if ((int)condition2.DynamicInvoke(item, temporal.Value) < 0)
-                    {
-                        temporal = temporal.Left;
-                    }
-                    else if ((int)condition2.DynamicInvoke(item, temporal.Value) > 0)
-                    {
-                        temporal = temporal.Right;
-                    }
-                    else
-                    {
-                        flag = true;
-                    }
+                    flag = true;
                 }
             }
             if (temporal == null)
@@ -224,25 +190,23 @@ namespace lab2
             temporal.Value = item;
         }
 
-        public void QueryResults(Nodo<T> temporal, T item, Delegate condition1, List<T> Results)
+        public T Search(T item, Delegate condition)
         {
-            if (temporal == null)
+            Nodo<T>? temporal = Root;
+            while (temporal != null && (int)condition.DynamicInvoke(item, temporal!.Value) != 0)
             {
-                return;
+                if ((int)condition.DynamicInvoke(item, temporal.Value) > 0)
+                {
+                    temporal = temporal.Right;
+                }
+                else
+                {
+                    temporal = temporal.Left;
+                }
             }
-            if (temporal.Left != null)
-            {
-                QueryResults(temporal.Left, item, condition1, Results);
-            }
-            if ((int)condition1.DynamicInvoke(item, temporal.Value) == 0)
-            {
-                Results.Add(temporal.Value);
-            }
-            if (temporal.Right != null)
-            {
-                QueryResults(temporal.Right, item, condition1, Results);
-            }
+            return temporal!.Value;
         }
+
         private Nodo<T> ReBalance(Nodo<T> nodo)
         {
             SetHeight(nodo);
