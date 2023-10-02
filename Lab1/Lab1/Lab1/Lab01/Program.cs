@@ -25,7 +25,7 @@ public class Program
                         string[] fila = item.Split(";");
                         foreach (var item1 in fila)
                         {
-                            Console.WriteLine(item1);
+                            Console.WriteLine(fila[1]);
                             Console.WriteLine("");
                         }
                         Persona? persona = JsonSerializer.Deserialize<Persona>(fila[1]);
