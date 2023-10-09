@@ -1,0 +1,3 @@
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab2\LAB3\LAB3\obj\Debug\LAB3.csproj.AssemblyReference.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab2\LAB3\LAB3\obj\Debug\LAB3.csproj.SuggestedBindingRedirects.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab2\LAB3\LAB3\obj\Debug\LAB3.csproj.CoreCompileInputs.cache
