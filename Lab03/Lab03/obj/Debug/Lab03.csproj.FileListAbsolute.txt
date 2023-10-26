@@ -1,0 +1,12 @@
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\bin\Debug\Lab03.exe.config
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\bin\Debug\Lab03.exe
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\bin\Debug\Lab03.pdb
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.csproj.AssemblyReference.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.csproj.SuggestedBindingRedirects.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.Form1.resources
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.Properties.Resources.resources
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.csproj.GenerateResource.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.csproj.CoreCompileInputs.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.exe
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.pdb
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\Lab03\Lab03\obj\Debug\Lab03.Cartas.resources
