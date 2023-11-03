@@ -41,6 +41,8 @@
             this.txtMostrarTexto = new System.Windows.Forms.TextBox();
             this.btnComprimirTexto = new System.Windows.Forms.Button();
             this.btnDescomprimirTexto = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // btnCargarArchivo
@@ -167,12 +169,24 @@
             this.btnDescomprimirTexto.Visible = false;
             this.btnDescomprimirTexto.Click += new System.EventHandler(this.btnDescomprimirTexto_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(437, 559);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(107, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Guardar archivo";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(708, 594);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnDescomprimirTexto);
             this.Controls.Add(this.btnComprimirTexto);
             this.Controls.Add(this.txtMostrarTexto);
@@ -208,6 +222,8 @@
         private System.Windows.Forms.TextBox txtMostrarTexto;
         private System.Windows.Forms.Button btnComprimirTexto;
         private System.Windows.Forms.Button btnDescomprimirTexto;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
