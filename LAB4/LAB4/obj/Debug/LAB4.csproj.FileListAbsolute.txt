@@ -1,0 +1,11 @@
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\bin\Debug\LAB4.exe.config
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\bin\Debug\LAB4.exe
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\bin\Debug\LAB4.pdb
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\obj\Debug\LAB4.csproj.AssemblyReference.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\obj\Debug\LAB4.csproj.SuggestedBindingRedirects.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\obj\Debug\LAB4.Form1.resources
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\obj\Debug\LAB4.Properties.Resources.resources
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\obj\Debug\LAB4.csproj.GenerateResource.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\obj\Debug\LAB4.csproj.CoreCompileInputs.cache
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\obj\Debug\LAB4.exe
+C:\Users\Monica\Documents\URL\SEXTO CICLO\Estructura de Datos II\ED2\LAB4\LAB4\obj\Debug\LAB4.pdb
