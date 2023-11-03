@@ -192,6 +192,7 @@ namespace Lab03
                 }
 
             }
+            button3.Show();
         }
 
         private void btnDescomprimirTexto_Click(object sender, EventArgs e)
@@ -258,6 +259,39 @@ namespace Lab03
             pointer = 0;
             nextChar = "";
             dic.Clear();
+            button3.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(saveFileDialog1.FileName))
+                    {
+                        string guardar = saveFileDialog1.FileName;
+                        StreamWriter textSave = File.CreateText(guardar);
+
+                        textSave.Write(txtMostrarTexto.Text);
+                        textSave.Flush();
+                        textSave.Close();
+                    }
+                    else
+                    {
+                        string guardar = saveFileDialog1.FileName;
+                        StreamWriter textSave = File.CreateText(guardar);
+
+                        textSave.Write(txtMostrarTexto.Text);
+                        textSave.Flush();
+                        textSave.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al guardar");
+            }
         }
     }
 }
