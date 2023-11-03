@@ -104,12 +104,30 @@ public class Program
                     Console.WriteLine(datos);
                     Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Escoja la operación que quiere realizar"
-                        + "\n" + "1. Decodificar DPI"
-                        + "\n" + "2. Salir");
+                        + "\n" + "1. Codificar DPI"
+                        + "\n" + "2 Decodificar DPI"
+                        + "\n" + "3. Salir");
                     int opcion = Convert.ToInt32(Console.ReadLine());
                     switch (opcion)
                     {
                         case 1:
+                            string encodedString = Encode(dpi);
+
+                            static string Encode(string dpi)
+                            {
+                                StringBuilder encodedString = new StringBuilder();
+                                foreach (char c in dpi)
+                                {
+                                    int charCode = (int)c;
+                                    char newChar = (char)(charCode + 1);
+                                    encodedString.Append(newChar);
+                                }
+                                return encodedString.ToString();
+                            }
+                            Console.WriteLine($"El DPI codificado es: {encodedString}");
+
+                            break;
+                        case 2:
                             Console.WriteLine("Ingrese el nombre de la empresa");
                             string empresa = Console.ReadLine()!;
                             if (empresa != null)
@@ -124,9 +142,14 @@ public class Program
                                 string resul = operando.Decodificacion(code, dic1);
                                 Console.WriteLine("El DPI de la persona es: " + resultado.dpi);
                                 Console.WriteLine("El DPI decodificado es:" + resul);
+                                //File.WriteAllText("respuesta.txt", resul);
+                                string nombreArchivo = "DPI Decodificado";
+                                StreamWriter sw = new StreamWriter(nombreArchivo);
+                                sw.WriteLine(resul);
+                                sw.Close();
                             }
                             break;
-                        case 2:
+                        case 3:
                             Environment.Exit(0);
                             break;
                         default:
